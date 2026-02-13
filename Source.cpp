@@ -1,7 +1,3 @@
-
-#include <iostream>
-using namespace std;
-
 #include <iostream>
 using namespace std;
 
@@ -9,7 +5,16 @@ int swap(int &, int &);
 
 int main() {
     int x = 5, y = 10;
-    cout << "x = " << x << "  | y = " << y << endl;
+
+    int*ptr = nullptr;
+
+    ptr = &x;
+
+    cout << "x = " << *ptr << " ";
+
+    ptr = &y;
+   
+    cout << "y = " << *ptr << endl;
 
     cout << "Swapping...\n";
     int sum = swap(x, y);
@@ -19,8 +24,13 @@ int main() {
 }
 
 int swap(int &a, int &b) {
-    int temp = a;
-    a = b;
-    b = temp;
+
+    int*ptr = nullptr;
+
+    ptr = &a;
+    
+    ptr = &b;
+
+
     return a + b;
 }
